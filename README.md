@@ -20,7 +20,7 @@
           $primary-color: #333;
 - Nesting
     - Sass will let you nest your CSS selectors in a way that follows the same visual hierarchy of your HTML
-    - nav {
+     ```nav {
             ul {
                 margin: 0;
                 padding: 0;
@@ -34,26 +34,26 @@
                 padding: 6px 12px;
                 text-decoration: none;
             }
-        }
+        } 
 - Partials
     -  A partial is a Sass file named with a leading underscore. You might name it something like _partial.scss. 
        The underscore lets Sass know that the file is only a partial file and that it should not be generated into a CSS file.
 - Modules
     - You don’t have to write all your Sass in a single file. You can split it up however you want with the @use rule.
-    - // _base.scss
+    - ```_base.scss
         $font-stack: Helvetica, sans-serif;
         $primary-color: #333;
         body {
             font: 100% $font-stack;
             color: $primary-color;
         }
-    - // styles.scss
+    - ``` // styles.scss
         @use 'base';
         .inverse {
             background-color: base.$primary-color;
             color: white;
         }
-    - //CSS
+    - ``` //CSS
         body {
             font: 100% Helvetica, sans-serif;
             color: #333;
@@ -65,7 +65,7 @@
 - Mixins
     - A mixin lets you make groups of CSS declarations that you want to reuse throughout your site. 
         It helps keep your Sass very DRY. You can even pass in values to make your mixin more flexible
-    - @mixin theme($theme: DarkGray) {
+    - ``` @mixin theme($theme: DarkGray) {
             background: $theme;
             box-shadow: 0 0 1px rgba($theme, .25);
             color: #fff;
@@ -79,7 +79,7 @@
         .success {
             @include theme($theme: DarkGreen);
         }
-    - //CSS
+    - ``` //CSS
         .info {
             background: DarkGray;
             box-shadow: 0 0 1px rgba(169, 169, 169, 0.25);
@@ -97,7 +97,7 @@
        }
 - Extend/Inheritance
     - Using @extend lets you share a set of CSS properties from one selector to another
-    - /* This CSS will print because %message-shared is extended. */
+    - ``` /* This CSS will print because %message-shared is extended. */
             %message-shared {
             border: 1px solid #ccc;
             padding: 10px;
@@ -107,6 +107,6 @@
             @extend %message-shared;
          }
 - Operators
-    - @use "sass:math";
+    - ``` @use "sass:math";
 - Install
-    - npm install -g sass
+    - ``` npm install -g sass
